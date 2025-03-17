@@ -2,7 +2,7 @@ from crawlers import *
 
 
 def main():
-    print_log("Starting crawl...")
+    print_log("Starting crawling...")
     news_list = list()
     with GoogleNewsCrawler() as crawler:
         q_list = [
