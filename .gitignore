@@ -1,5 +1,7 @@
 .idea
 .env
+.DS_Store
 *.sqlite
 test.py
 *oauth*
+news_data
