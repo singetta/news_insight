@@ -1,20 +1,27 @@
 # OpenAI API 기반 뉴스 인사이트 얻기
 
 ## Requirements
+### 환경
 ```
-- OS: MacOS or Linux
+- OS: MacOS or Ubuntu
 - Anaconda
 - Python 3.11
-- 기타 Python 패키지 (requrements.txt) 참조
+- 기타 Python 패키지 (requrements.txt 참조)
+```
+### env 추가
+- `.env`파일 생성 후 아래 내용 및 값 추가
+```
+OPENAI_API_KEY='sk-proj-xxxx'    # OpenAI API Key
+CONDA_PYTHON_PATH='/Users/~'     # Conda python Path
 ```
 
 ## Description
 Google News에서 크롤링한 뉴스 헤드라인에서 OpenAI API를 활용하여 인사이트 얻기<br>
 기타 자세한 설명은 아래 블로그 참고
-- [OpenAI API를 활용한 관심 있는 주제에 대한 뉴스 인사이트 얻기 #1]()
-- []()
+- [OpenAI API를 활용한 관심 있는 주제에 대한 뉴스 인사이트 얻기 #1](https://minsu-cho.medium.com/%EB%89%B4%EC%8A%A4-%ED%81%AC%EB%A1%A4%EB%A7%81-%EB%B0%8F-openai-api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%96%BB%EA%B8%B0-1-8d2acb5c3d43)
+- [OpenAI API를 활용한 관심 있는 주제에 대한 뉴스 인사이트 얻기 #2](https://medium.com/@minsu-cho/%EB%89%B4%EC%8A%A4-%ED%81%AC%EB%A1%A4%EB%A7%81-%EB%B0%8F-openai-api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%96%BB%EA%B8%B0-2-ab7b06abd417)
 
-## 기본 프로그램 실행
+## 프로그램 실행
 ### 크롤러 테스트
 ```
 python test_crawler.py
@@ -74,10 +81,7 @@ python -m streamlit run streamlit_app.py --server.port 8503
 ![streamlit_image](image/streamlit_image.png)
 - `키워드`, `검색 주기`, `지역` 수정 후 저장 시 background로 동작하는 `job_news_insight.py` 재실행
 
-## Background 웹 실행 방법
-### Edit 기능 활성화
-- `streamlit_app.py` 내 `use_text_input = True` 변경
-### 실행 방법
+### Background 웹 실행
 ```python
 nohup python -m streamlit run streamlit_app.py --server.port 8501 > streamlit.log 2>&1 &; disown;
 ```

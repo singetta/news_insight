@@ -18,14 +18,14 @@ News headline data should be used to evaluate and gain insights into important f
 
 # Response Example
 - if Response language is `us`, then
-    ```json
-    {
-      "news_insight": "Recent {Keyword} related headlines ~"
-    }
-    ```
-    - if Response language is `ko`, then
-    ```json
-    {
-      "news_insight": "최근 {Keyword} 관련 헤드라인은 ~"
-    }
-    ```
+```json
+{
+  "news_insight": "Recent {Keyword} related headlines ~"
+}
+```
+- if Response language is `ko`, then
+```json
+{
+  "news_insight": "최근 {Keyword} 관련 헤드라인은 ~"
+}
+```

@@ -4,7 +4,7 @@ from crawlers import get_latest_news_data, rerun_script
 from job_news_insight import get_news_insight_config
 from job_news_insight import set_news_insight_config
 
-use_text_input = False
+disable_text_input = False
 
 
 def show_toast_message(message, is_success):
@@ -30,10 +30,10 @@ def main():
         keyword_list, time_data, location = get_news_insight_config('news_insight_config.txt')
         keyword_str = ';'.join(keyword_list)
         new_keyword = st.text_input("키워드", keyword_str if len(keyword_list) > 0 else ';으로 키워드 추가',
-                                    disabled=use_text_input)
+                                    disabled=disable_text_input)
         new_time_data = st.text_input("검색 주기", time_data if time_data != '' else 'xd(날짜), xh(시간)',
-                                      disabled=use_text_input)
-        new_location = st.selectbox("지역", ['us', 'ko'], index=0, disabled=use_text_input)
+                                      disabled=disable_text_input)
+        new_location = st.selectbox("지역", ['us', 'ko'], index=0, disabled=disable_text_input)
         if st.button("저장", use_container_width=True):
             try:
                 set_news_insight_config(new_keyword, new_time_data, new_location, 'news_insight_config.txt')
